@@ -12,29 +12,65 @@
 </head>
 
 <body>
-    <form class="form">
-        <h4> Filter cats by:</h4>
-        <label for="image">Image</label>
-        <input type="checkbox" id="">
+    <!-- Hero-->
+    <header class="hero is-primary">
+        <div class="hero hero-body">
+          <p class="title">
+            Keeping Calm with Cats
+          </p>
+          <p class="subtitle">
+            Stressed? Studies have shown viewing online cat media is related to positive emotions!
+          </p>
+        </div>
+    </header>
 
-        <label for="gif">GIF</label>
-        <input type="checkbox" id="">
+    <!-- main content area-->
+    <div class="columns">
 
-        <p>Add tag:<input type="text"></p>
-        <p>Ex: happy, funny, silly</p>
+        <!-- left panel -->
+        <div class="column is-one-quarter">
+            <div class="card">
+                <header class="card-header">
+                  <p class="card-header-title">Filter Cats by</p>    
+                </header>
+                <div class="card-content">
+                    <form class="field form">
+                        <div class="control">
+                            <label class="radio">
+                            <input type="radio" name="answer">Image</label>
+                            <label class="radio">
+                            <input type="radio" name="answer">GIF</label>
+                            <label class="label">Add tag:</label>
+                        </div>
+                        <div class="control">
+                              <input class="input" type="text" placeholder="Ex: happy">
+                        </div>
+                        <button id="generate-cat" class="button">Show me my cat!</button>
+                        </form>  
+                </div>
+              </div>
 
-        <button id="generate" class="btn">Show me my cat!</button>
-    </form>
+              <div class="card">
+                <header class="card-header">
+                  <p class="card-header-title">Cat Facts</p>
+                </header>
+                <div class="card-content">
+                    <form class="form">
+                        <p> Generate random cat facts</p>
+                        <button id="generate-fact" class="button">Show me Cat Facts!</button>
+                    </form>
+                </div>
+              </div>
+        </div>
 
-    <h2>OR</h2>
 
-    <form class="form">
-        <h4>Cat Facts:</h4>
-        <p> Generate random cat facts</p>
-        <button id="generate" class="btn">Show me Cat Facts!</button>
-    </form>
-
-
+        <div class="column rm-5">
+          <div class="box">
+            <p class="title is-5">Flexible column</p>
+            <p class="subtitle">This column will take up the remaining space available.</p>
+            </div>
+        </div>
+    </div>
     <script src="./assets/js/script.js"></script>
 </body>
 
