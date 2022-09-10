@@ -31,10 +31,15 @@
         <div class="column is-one-quarter">
             <div class="card">
                 <header class="card-header">
-                  <p class="card-header-title">Filter Cats by</p>    
+                  <p class="card-header-title">Show me:</p>    
                 </header>
                 <div class="card-content">
-                    <form class="field form">
+                  <form>
+                  <button id="images" class="button btn btn-image"><p>Images</p></button>
+                  <button id="gifs" class="button btn btn-gif"><p>Gifs</p></button>
+                </form>
+
+                    <!-- <form class="field form">
                         <div class="control">
                             <label class="radio">
                             <input type="radio" name="answer">Image</label>
@@ -45,8 +50,10 @@
                         <div class="control">
                               <input class="input" type="text" placeholder="Ex: happy">
                         </div>
-                        <button id="generate-cat" class="button">Show me my cat!</button>
-                        </form>  
+                        <div id="cat-buttons">
+                        <button id="generate-cat" data-language="gif" class="button">Show me my cat gif!</button>
+                        </div>
+                        </form>   -->
                 </div>
               </div>
 
@@ -57,7 +64,7 @@
                 <div class="card-content">
                     <form class="form">
                         <p> Generate random cat facts</p>
-                        <button id="generate-fact" class="button">Show me Cat Facts!</button>
+                        <button id="generate-fact" class="button"><p>Show me Cat Facts!</p></button>
                     </form>
                 </div>
               </div>
@@ -65,9 +72,8 @@
 
 
         <div class="column rm-5">
-          <div class="box">
-            <p class="title is-5">Flexible column</p>
-            <p class="subtitle">This column will take up the remaining space available.</p>
+          <div id="cat-container" class="box">
+            <div id="grid" class="imgrid"></div>
             </div>
         </div>
     </div>
