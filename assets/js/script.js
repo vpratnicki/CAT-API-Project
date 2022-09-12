@@ -1,9 +1,10 @@
 var catContainerEl = document.querySelector("#grid");
-var getMediaButtonEl = document.querySelector("#media");
+var getMediaButtonEl = document.querySelector("#media-buttons");
+console.log(getMediaButtonEl);
 
 var getCatImages = function () {
  //display random images in a grid 
-var requestUrl= `https://api.thecatapi.com/v1/images/search?limit=6&api_key=live_XVBvacawr5DEpFchrnVEnA6U24e9Dq6sPNr0HgYPz4WBYlSMczHesXIoa76DsSPc`;
+var requestUrl= `https://api.thecatapi.com/v1/images/search?limit=6&mime_types=jpg&api_key=live_XVBvacawr5DEpFchrnVEnA6U24e9Dq6sPNr0HgYPz4WBYlSMczHesXIoa76DsSPc`;
  fetch(requestUrl)
  .then((response) => {
    return response.json();
@@ -62,10 +63,10 @@ var buttonClickHandler = function (event) {
   var mediaType = event.target.getAttribute("data-type");
   console.log(mediaType);
 
-  if ("data-type" === "img") {
-    getCatImages(mediaType);
-  } else if ("data-type" === "img") {
-    getCatGifs(mediaType);
+  if (mediaType === "img") {
+    getCatImages();
+  } else if (mediaType === "gif") {
+    getCatGifs();
   } else {
     alert('Unable to find cats! They are napping.');
   }
