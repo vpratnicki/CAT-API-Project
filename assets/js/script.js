@@ -11,14 +11,10 @@ function fetchFacts(event) {
 
   fetch('https://catfact.ninja/fact?max_length=140')
   .then( function(responseObj) {
-    if(!responseObj.ok) {
-      console.log('The fetch was not successful');
-      factContainerEl.textContent = 'The fetch was not successful';
-    } else {
-      console.log('responseObj is', responseObj);
-      // var parsedBody = responseObj.json();
-      return responseObj.json();
-    }
+    if(!responseObj.ok) {}
+    console.log('responseObj is', responseObj);
+    // var parsedBody = responseObj.json();
+    return responseObj.json();
   })
   .then( function(data) {
     console.log('data is', data)
@@ -103,9 +99,6 @@ var buttonClickHandler = function (event) {
 
 }
 
-function myCoolFunction() {
-  // does something cool
-}
 
 getMediaButtonEl.addEventListener("click", buttonClickHandler);
 // getGifsButtonEl.addEventListener("click", getCatGifs);
