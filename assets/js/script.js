@@ -62,5 +62,19 @@ var buttonClickHandler = function (event) {
   }
 };
 
+function setFavoritesInStorage(item) {
+  var favorites = getFavoritesFromStorage();
+  favorites.push(item);
+  localStorage.setItem('favs', JSON.stringify(favorites))
+}
+
+function getFavoritesFromStorage() {
+  var favorites = JSON.parse(localStorage.getItem('favs'));
+  if (!favorites) {
+    return []
+  }
+  return favorites;
+}
+
 getMediaButtonEl.addEventListener("click", buttonClickHandler);
 generateFactsEl.addEventListener("click", fetchFacts);
