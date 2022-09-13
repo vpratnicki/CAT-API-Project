@@ -11,11 +11,11 @@ var requestUrl= `https://api.thecatapi.com/v1/images/search?limit=6&mime_types=j
  })
 .then((data) => {
   var imagesData = data;
-  imagesData.map(function(imageData) {
+  imagesData.map(function(imagesData) {
     
     var image = document.createElement('img');
     //use the url to display the image
-    image.src = `${imageData.url}`;
+    image.src = `${imagesData.url}`;
         
     var gridCell = document.createElement('div');
     gridCell.classList.add('col');
@@ -73,7 +73,6 @@ var buttonClickHandler = function (event) {
 
   // clear old content
   catContainerEl.textContent = "";
-
 }
 
 getMediaButtonEl.addEventListener("click", buttonClickHandler);
