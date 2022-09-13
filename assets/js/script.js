@@ -1,6 +1,29 @@
 var catContainerEl = document.querySelector("#grid");
 var getMediaButtonEl = document.querySelector("#media-buttons");
-console.log(getMediaButtonEl);
+// console.log(getMediaButtonEl);
+var generateFactsEl = document.querySelector("#generate-fact");
+var factContainerEl = document.getElementById('random-cat-fact-container');
+
+
+function fetchFacts(event) {
+  event.preventDefault();
+  console.log('You pressed the get fact button');
+
+  fetch('https://catfact.ninja/fact?max_length=140')
+  .then( function(responseObj) {
+    if(!responseObj.ok) {}
+    console.log('responseObj is', responseObj);
+    // var parsedBody = responseObj.json();
+    return responseObj.json();
+  })
+  .then( function(data) {
+    console.log('data is', data)
+    var theFact = data.fact;
+    console.log('The fact is: ', theFact);
+    factContainerEl.textContent = theFact;
+  })
+}
+
 
 var getCatImages = function () {
  //display random images in a grid 
@@ -75,5 +98,7 @@ var buttonClickHandler = function (event) {
   catContainerEl.textContent = "";
 }
 
+
 getMediaButtonEl.addEventListener("click", buttonClickHandler);
 // getGifsButtonEl.addEventListener("click", getCatGifs);
+generateFactsEl.addEventListener("click", fetchFacts);
