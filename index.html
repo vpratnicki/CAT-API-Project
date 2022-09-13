@@ -33,9 +33,9 @@
                 <header class="card-header">
                   <p class="card-header-title">Show me:</p>    
                 </header>
-                <div class="card-content" id="media-buttons">
-                  <button id="images" data-type="img" class="button btn btn-image"><p>Images</p></button><br/>
-                  <button id="gifs" data-type="gif" class="button btn btn-gif"><p>Gifs</p></button>
+                <div class="content card-content" id="media-buttons">
+                  <button id="images" data-type="img" class="button btn btn-media">Images</button><br/>
+                  <button id="gifs" data-type="gif" class="button btn btn-media">Gifs</button>
 
                     <!-- <form class="field form">
                         <div class="control">
@@ -68,14 +68,20 @@
               </div>
         </div>
 
-
+        <!-- Right content area -->
         <div class="column rm-5">
           <div id="cat-container" class="box">
-            <h2 id="random-cat-fact-container" class="cat-fact"></h2>
-            <div id="grid" class="imgrid"></div>
+            <div id="grid" class="img-grid"></div>
+          </div>
+          <div class="content box">
+            <div id="favorites" class="img-grid">
+              <h2>My Favorite Cats</h2>
+            
             </div>
+          </div>
         </div>
     </div>
+    <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
     <script src="./assets/js/script.js"></script>
 </body>
 
