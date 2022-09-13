@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css" />
+
+    <title>Keep Calm with Cats</title>
+</head>
+
+<body>
+    <!-- Hero-->
+    <header class="hero is-primary">
+        <div class="hero hero-body">
+          <p class="title">
+            Keeping Calm with Cats
+          </p>
+          <p class="subtitle">
+            Stressed? Studies have shown viewing online cat media is related to positive emotions!
+          </p>
+        </div>
+    </header>
+
+    <!-- main content area-->
+    <div class="columns">
+
+        <!-- left panel -->
+        <div class="column is-one-quarter">
+            <div class="card">
+                <header class="card-header">
+                  <p class="card-header-title">Show me:</p>    
+                </header>
+                <div class="content card-content" id="media-buttons">
+                  <button id="images" data-type="img" class="button btn btn-media">Images</button><br/>
+                  <button id="gifs" data-type="gif" class="button btn btn-media">Gifs</button>
+
+                    <!-- <form class="field form">
+                        <div class="control">
+                            <label class="radio">
+                            <input type="radio" name="answer">Image</label>
+                            <label class="radio">
+                            <input type="radio" name="answer">GIF</label>
+                            <label class="label">Add tag:</label>
+                        </div>
+                        <div class="control">
+                              <input class="input" type="text" placeholder="Ex: happy">
+                        </div>
+                        <div id="cat-buttons">
+                        <button id="generate-cat" data-language="gif" class="button">Show me my cat gif!</button>
+                        </div>
+                        </form>   -->
+                </div>
+              </div>
+
+              <div class="card">
+                <header class="card-header">
+                  <p class="card-header-title">Cat Facts</p>
+                </header>
+                <div class="card-content">
+                    <form class="form">
+                        <p> Generate random cat facts</p>
+                        <button id="generate-fact" class="button"><p>Show me Cat Facts!</p></button>
+                    </form>
+                </div>
+              </div>
+        </div>
+
+        <!-- Right content area -->
+        <div class="column rm-5">
+          <div id="cat-container" class="box">
+            <div id="grid" class="img-grid"></div>
+          </div>
+          <div class="content box">
+            <div id="favorites" class="img-grid">
+              <h2>My Favorite Cats</h2>
+            
+            </div>
+          </div>
+        </div>
+    </div>
+    <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
+    <script src="./assets/js/script.js"></script>
+</body>
+
+</html>
