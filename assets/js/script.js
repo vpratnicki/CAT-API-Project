@@ -42,6 +42,13 @@ function getAndRenderMedia(mediaType) {
           var image = document.createElement("img");
           //use the url from the image object
           image.src = `${current.url}`;
+          image.addEventListener('click', function(event) {
+            event.preventDefault();
+            var source = event.target.getAttribute('src');
+            setFavoritesInStorage(source);
+            alert('Added to favorites!');
+            renderFavorites();
+          })
 
           var gridCell = document.createElement("div");
           gridCell.classList.add("col");
@@ -61,6 +68,10 @@ var buttonClickHandler = function (event) {
     getAndRenderMedia(clickType);
   }
 };
+
+function renderFavorites() {
+  console.log(getFavoritesFromStorage())
+}
 
 function setFavoritesInStorage(item) {
   var favorites = getFavoritesFromStorage();
