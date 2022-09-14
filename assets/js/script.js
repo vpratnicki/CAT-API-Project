@@ -46,6 +46,7 @@ function getAndRenderMedia(mediaType) {
             event.preventDefault();
             var source = event.target.getAttribute('src');
             setFavoritesInStorage(source);
+            console.log(source);
             alert('Added to favorites!');
             renderFavorites();
           })
@@ -73,7 +74,24 @@ var buttonClickHandler = function (event) {
 };
 
 function renderFavorites() {
-  console.log(getFavoritesFromStorage())
+  var favorites = getFavoritesFromStorage()
+  document.getElementById("favorites").innerHTML="";
+  for (var i = 0; i < favorites.length; i++) {
+    var url = favorites[i];
+    var image = document.createElement("img");
+    image.src = `${url}`;
+    //display saved media:
+    var gridCell = document.createElement("div");
+            gridCell.classList.add("col");
+            gridCell.classList.add("col-lg");
+            gridCell.appendChild(image);
+  
+            document.getElementById("favorites").appendChild(gridCell);
+    console.log(url);
+  }
+  // console.log(getFavoritesFromStorage())
+
+
 }
 
 function setFavoritesInStorage(item) {
@@ -92,3 +110,5 @@ function getFavoritesFromStorage() {
 
 getMediaButtonEl.addEventListener("click", buttonClickHandler);
 generateFactsEl.addEventListener("click", fetchFacts);
+
+renderFavorites();
