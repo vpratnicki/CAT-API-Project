@@ -67,6 +67,9 @@ var buttonClickHandler = function (event) {
     var clickType = event.target.getAttribute("data-type");
     getAndRenderMedia(clickType);
   }
+
+  // clear old content
+  catContainerEl.textContent = "";
 };
 
 function renderFavorites() {
