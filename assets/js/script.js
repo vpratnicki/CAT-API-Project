@@ -25,13 +25,13 @@ function fetchFacts(event) {
 }
 
 function getAndRenderMedia(mediaType) {
-  var url = "https://api.thecatapi.com/v1/images/search";
+  var url = "https://api.thecatapi.com/v1/images/search?limit=6&mime_types=";
   if (mediaType === "img") {
     url +=
-      "?limit=6&mime_types=jpg&api_key=live_XVBvacawr5DEpFchrnVEnA6U24e9Dq6sPNr0HgYPz4WBYlSMczHesXIoa76DsSPc";
+      "jpg&api_key=live_XVBvacawr5DEpFchrnVEnA6U24e9Dq6sPNr0HgYPz4WBYlSMczHesXIoa76DsSPc";
   } else {
     url +=
-      "?limit=6&mime_types=gif&api_key=live_XVBvacawr5DEpFchrnVEnA6U24e9Dq6sPNr0HgYPz4WBYlSMczHesXIoa76DsSPc";
+      "gif&api_key=live_XVBvacawr5DEpFchrnVEnA6U24e9Dq6sPNr0HgYPz4WBYlSMczHesXIoa76DsSPc";
   }
   fetch(url)
     .then((response) => response.json())
@@ -46,8 +46,8 @@ function getAndRenderMedia(mediaType) {
             event.preventDefault();
             var source = event.target.getAttribute('src');
             setFavoritesInStorage(source);
-            console.log(source);
-            alert('Added to favorites!');
+            // console.log(source);
+            // alert('Added to favorites!');
             renderFavorites();
           })
 

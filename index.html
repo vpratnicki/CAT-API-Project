@@ -7,15 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="./assets/css/style.css" />
-
     <title>Keep Calm with Cats</title>
 </head>
 
 <body>
-    <!-- Hero-->
+    <!-- Hero -->
     <header class="hero is-primary">
         <div class="hero hero-body">
           <h1 class="title title-font">
@@ -27,12 +26,13 @@
         </div>
     </header>
 
-    <!-- main content area-->
+    <!-- Main content area-->
     <div class="columns">
 
-      <!-- left panel -->
+      <!-- Left panel -->
       <div class="column is-one-quarter">
-        <!-- first card contain images and Gifs buttons -->
+
+        <!-- First card contain images and Gifs buttons -->
         <div class="card card-spacing">
           <header class="card-header header-color">
             <p class="card-header-title">Show me:</p>    
@@ -40,11 +40,10 @@
         <div class="content card-content" id="media-buttons">
           <button id="images" data-type="img" class="button btn btn-media">Images</button><br/>
           <button id="gifs" data-type="gif" class="button btn btn-media">Gifs</button>
-
         </div>
       </div>
 
-      <!-- second card contain facts button -->
+      <!-- Second card contain facts button -->
       <div class="card card-spacing">
           <header class="card-header header-color">
             <p class="card-header-title">Cat Facts</p>
@@ -59,7 +58,7 @@
     <!-- Right panel -->
     <div class="column rm-5">
 
-      <!-- imgs/gifs randomly display here -->
+      <!-- Imgs/gifs randomly display here -->
       <div id="cat-container" class="content box">
         <h2>Random Cats</h2>
         <p>Select one of the buttons to generate some CAT-tasic media! See a keeper? Select your cat to pin it to your My Favorite Cats section!</p>
@@ -67,16 +66,12 @@
       </div>
 
       <!-- Favorite Cats display here -->
-      <div class="content box">
+      <div class="content box mobile">
         <h2>My Favorite Cats</h2>
-        <div id="favorites" class="img-grid">
-          
-        
-        </div>
+        <div id="favorites" class="img-grid"></div>
       </div>
     </div>
 </div>
 <script src="./assets/js/script.js"></script>
 </body>
-
 </html>
