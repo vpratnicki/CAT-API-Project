@@ -25,13 +25,13 @@ function fetchFacts(event) {
 }
 
 function getAndRenderMedia(mediaType) {
-  var url = "https://api.thecatapi.com/v1/images/search";
+  var url = "https://api.thecatapi.com/v1/images/search?limit=6&mime_types=";
   if (mediaType === "img") {
     url +=
-      "?limit=6&mime_types=jpg&api_key=live_XVBvacawr5DEpFchrnVEnA6U24e9Dq6sPNr0HgYPz4WBYlSMczHesXIoa76DsSPc";
+      "jpg&api_key=live_XVBvacawr5DEpFchrnVEnA6U24e9Dq6sPNr0HgYPz4WBYlSMczHesXIoa76DsSPc";
   } else {
     url +=
-      "?limit=6&mime_types=gif&api_key=live_XVBvacawr5DEpFchrnVEnA6U24e9Dq6sPNr0HgYPz4WBYlSMczHesXIoa76DsSPc";
+      "gif&api_key=live_XVBvacawr5DEpFchrnVEnA6U24e9Dq6sPNr0HgYPz4WBYlSMczHesXIoa76DsSPc";
   }
   fetch(url)
     .then((response) => response.json())
@@ -42,6 +42,14 @@ function getAndRenderMedia(mediaType) {
           var image = document.createElement("img");
           //use the url from the image object
           image.src = `${current.url}`;
+          image.addEventListener('click', function(event) {
+            event.preventDefault();
+            var source = event.target.getAttribute('src');
+            setFavoritesInStorage(source);
+            // console.log(source);
+            // alert('Added to favorites!');
+            renderFavorites();
+          })
 
           var gridCell = document.createElement("div");
           gridCell.classList.add("col");
@@ -60,7 +68,47 @@ var buttonClickHandler = function (event) {
     var clickType = event.target.getAttribute("data-type");
     getAndRenderMedia(clickType);
   }
+
+  // clear old content
+  catContainerEl.textContent = "";
 };
+
+function renderFavorites() {
+  var favorites = getFavoritesFromStorage()
+  document.getElementById("favorites").innerHTML="";
+  for (var i = 0; i < favorites.length; i++) {
+    var url = favorites[i];
+    var image = document.createElement("img");
+    image.src = `${url}`;
+    //display saved media:
+    var gridCell = document.createElement("div");
+            gridCell.classList.add("col");
+            gridCell.classList.add("col-lg");
+            gridCell.appendChild(image);
+  
+            document.getElementById("favorites").appendChild(gridCell);
+    console.log(url);
+  }
+  // console.log(getFavoritesFromStorage())
+
+
+}
+
+function setFavoritesInStorage(item) {
+  var favorites = getFavoritesFromStorage();
+  favorites.push(item);
+  localStorage.setItem('favs', JSON.stringify(favorites))
+}
+
+function getFavoritesFromStorage() {
+  var favorites = JSON.parse(localStorage.getItem('favs'));
+  if (!favorites) {
+    return []
+  }
+  return favorites;
+}
 
 getMediaButtonEl.addEventListener("click", buttonClickHandler);
 generateFactsEl.addEventListener("click", fetchFacts);
+
+renderFavorites();
