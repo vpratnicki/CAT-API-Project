@@ -1,4 +1,4 @@
-# CAT-API-Project
+# Keep Calm with Cats
 
 ## Table of Content
 
@@ -32,5 +32,5 @@ A responsive and dynamic website to help users interact with images, GIFs, and f
 
 ## Website
 
-https://vpratnicki.github.io/CAT-API-Project/
+https://vpratnicki.github.io/Keep-Calm-with-Cats
 
