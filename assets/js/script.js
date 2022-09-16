@@ -36,7 +36,7 @@ function getAndRenderMedia(mediaType) {
   fetch(url)
     .then((response) => response.json())
     .then((data) => {
-      for (var i = 0; data.length; i++) {
+      for (var i = 0; i < data.length; i++) {
         var current = data[i];
         if (current.url !== undefined) {
           var image = document.createElement("img");
