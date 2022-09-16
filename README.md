@@ -21,8 +21,8 @@ The page was created using all language elements that we had learned thus far.  
 A responsive and dynamic website to help users interact with images, GIFs, and facts about cats to add a sense of well-being to their stressful everyday lives.  When the user clicks on the image tab on the left panel, six randomized images of cats will be generated on the right panel.  Alternatively, the same thing will happen when the user clicks on the GIF or Facts tab as well.  Finally the user has an option to save their favorite images or GIFs for later use.
 
 
-![ScreenShot1](assets/images/Screen Shot 2022-09-15 at 9.02.12 PM.png)
-![ScreenShot2](assets/images/Screen Shot 2022-09-15 at 9.03.20 PM.png)
+![ScreenShot1](assets/images/ScreenShot2022-09-15at9.02.12PM.png)
+![ScreenShot2](assets/images/ScreenShot2022-09-15at9.03.20PM.png)
 
 ## Built With
 
